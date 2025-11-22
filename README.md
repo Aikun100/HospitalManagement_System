@@ -1,59 +1,295 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏥 Hospital Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive, modern Hospital Management System built with Laravel and Blade templates, featuring a stunning glassmorphism UI design.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🔐 Authentication & Authorization
+- Multi-role authentication (Admin, Doctor, Patient)
+- Role-based access control
+- Secure login and registration
+- User profile management
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 👥 User Management
+- **Patients**: Complete patient records with medical history, allergies, emergency contacts
+- **Doctors**: Doctor profiles with specializations, qualifications, and experience
+- **Departments**: Organize doctors by hospital departments
 
-## Learning Laravel
+### 📅 Appointment System
+- Schedule and manage appointments
+- Track appointment status (Scheduled, Confirmed, Completed, Cancelled)
+- Link appointments to patients and doctors
+- Search and filter appointments
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 💊 Prescription Management
+- Create digital prescriptions
+- Multiple medications per prescription
+- Dosage, frequency, and duration tracking
+- Follow-up date scheduling
+- Link prescriptions to appointments
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🧪 Laboratory Module
+- Lab test catalog management
+- Record and track test results
+- Test status tracking (Pending, Completed, Cancelled)
+- Link results to patients and doctors
 
-## Laravel Sponsors
+### 💰 Billing & Invoicing
+- Generate professional invoices
+- Track payment status (Paid, Unpaid, Refunded)
+- Multiple payment methods support
+- Printable invoice view
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 📦 Inventory Management
+- Medical supplies and equipment tracking
+- Low stock alerts
+- Automatic status updates
+- Category-based organization
 
-### Premium Partners
+### 🔍 Search & Filtering
+- Server-side search across all modules
+- Real-time filtering
+- Advanced search capabilities
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 🎨 Modern UI/UX
+- Glassmorphism design
+- Smooth animations and transitions
+- Responsive design for all devices
+- Premium visual aesthetics
+- Interactive micro-animations
 
-## Contributing
+## 🚀 Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Prerequisites
+- PHP >= 8.1
+- Composer
+- MySQL/MariaDB
+- Node.js & NPM (optional, for asset compilation)
 
-## Code of Conduct
+### Setup Instructions
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. **Clone the repository**
+```bash
+git clone https://github.com/Aikun100/HospitalManagement_System.git
+cd HospitalManagement_System
+```
 
-## Security Vulnerabilities
+2. **Install dependencies**
+```bash
+composer install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. **Environment configuration**
+```bash
+cp .env.example .env
+```
 
-## License
+Edit `.env` file with your database credentials:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=hospital_management
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. **Generate application key**
+```bash
+php artisan key:generate
+```
+
+5. **Run migrations**
+```bash
+php artisan migrate
+```
+
+6. **Seed database (optional)**
+```bash
+php artisan db:seed
+```
+
+7. **Start the development server**
+```bash
+php artisan serve
+```
+
+Visit `http://localhost:8000` in your browser.
+
+## 👤 Default Admin Account
+
+After running migrations, create an admin account manually or use these credentials if seeded:
+
+**Email:** `admin@hospital.com`  
+**Password:** `admin123`  
+**Role:** Admin
+
+### Creating Admin Account Manually
+
+If you haven't seeded the database, create an admin account using Laravel Tinker:
+
+```bash
+php artisan tinker
+```
+
+Then run:
+```php
+\App\Models\User::create([
+    'name' => 'Admin User',
+    'email' => 'admin@hospital.com',
+    'password' => bcrypt('admin123'),
+    'role' => 'admin'
+]);
+```
+
+## 📱 User Roles & Permissions
+
+### Admin
+- Full system access
+- Manage all users, doctors, patients
+- Access to billing and inventory
+- Department management
+- System settings
+
+### Doctor
+- View and manage appointments
+- Create and manage prescriptions
+- Access patient records
+- Record lab test results
+- Limited inventory access
+
+### Patient
+- View personal appointments
+- View prescriptions
+- View lab results
+- Update profile settings
+
+## 🗂️ Project Structure
+
+```
+HospitalManagement-System/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── AppointmentController.php
+│   │   ├── BillingController.php
+│   │   ├── DashboardController.php
+│   │   ├── DepartmentController.php
+│   │   ├── DoctorController.php
+│   │   ├── InventoryController.php
+│   │   ├── LabTestController.php
+│   │   ├── PatientController.php
+│   │   ├── PrescriptionController.php
+│   │   ├── SettingsController.php
+│   │   └── TestResultController.php
+│   └── Models/
+│       ├── Appointment.php
+│       ├── Billing.php
+│       ├── Department.php
+│       ├── Doctor.php
+│       ├── Inventory.php
+│       ├── LabTest.php
+│       ├── Patient.php
+│       ├── Prescription.php
+│       ├── TestResult.php
+│       └── User.php
+├── database/
+│   └── migrations/
+├── resources/
+│   └── views/
+│       ├── appointments/
+│       ├── billing/
+│       ├── departments/
+│       ├── doctors/
+│       ├── inventory/
+│       ├── lab_tests/
+│       ├── patients/
+│       ├── prescriptions/
+│       ├── settings/
+│       ├── test_results/
+│       └── layouts/
+│           └── app.blade.php
+└── routes/
+    └── web.php
+```
+
+## 🎨 Design Features
+
+- **Glassmorphism UI**: Modern frosted glass effect throughout
+- **Gradient Backgrounds**: Multi-layered, animated gradients
+- **Smooth Animations**: Page transitions, hover effects, and micro-interactions
+- **Responsive Design**: Mobile-first approach
+- **Premium Aesthetics**: Professional color palette and typography
+- **Interactive Elements**: Button ripple effects, form animations
+
+## 🔧 Technologies Used
+
+- **Backend**: Laravel 10.x
+- **Frontend**: Blade Templates, Vanilla CSS
+- **Database**: MySQL
+- **Icons**: Font Awesome 6.4
+- **Fonts**: Inter (Google Fonts)
+
+## 📊 Database Schema
+
+### Main Tables
+- `users` - System users with role-based access
+- `patients` - Patient records and medical information
+- `doctors` - Doctor profiles and credentials
+- `departments` - Hospital departments
+- `appointments` - Appointment scheduling
+- `prescriptions` - Medical prescriptions
+- `inventory` - Medical supplies and equipment
+- `billings` - Invoice and payment tracking
+- `lab_tests` - Available laboratory tests
+- `test_results` - Patient test results
+
+## 🛠️ Development
+
+### Running Tests
+```bash
+php artisan test
+```
+
+### Code Style
+```bash
+./vendor/bin/pint
+```
+
+### Clear Cache
+```bash
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+```
+
+## 📝 License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE).
+
+## 👨‍💻 Author
+
+**Aikun100**
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## 📧 Support
+
+For support, email support@hospital.com or open an issue in the repository.
+
+## 🙏 Acknowledgments
+
+- Laravel Framework
+- Font Awesome Icons
+- Google Fonts (Inter)
+- All contributors and supporters
+
+---
+
+**Note**: This is a demonstration project. Please ensure proper security measures, data encryption, and compliance with healthcare regulations (HIPAA, GDPR, etc.) before using in a production environment.
